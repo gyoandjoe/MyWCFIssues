@@ -1,0 +1,34 @@
+﻿@model MyWCFIssues.Web.Models.FacturaViewModel
+
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>View</h2>
+
+<div>
+    <h4>FacturaViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CantidadFacturada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CantidadFacturada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombrePersona)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombrePersona)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")*@
+</p>

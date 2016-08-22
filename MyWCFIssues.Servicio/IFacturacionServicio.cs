@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -10,7 +11,7 @@ namespace NetaSystems.Servicio
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
     [ServiceContract]
-    public interface IService1
+    public interface IFacturacionServicio
     {
 
         [OperationContract]
@@ -26,32 +27,20 @@ namespace NetaSystems.Servicio
         (Method = "POST",
         RequestFormat = WebMessageFormat.Json,
         ResponseFormat = WebMessageFormat.Json,
-        BodyStyle = WebMessageBodyStyle.Wrapped)]
-        FacturaModel GetDataUsingDataContract();
+        BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        List<FacturaModel> ObtenerFacturas(int noPagina, int tamanoPagina);
 
-        // TODO: Add your service operations here
+
+        [OperationContract]
+        [WebInvoke
+        (Method = "POST",
+        RequestFormat = WebMessageFormat.Json,
+        ResponseFormat = WebMessageFormat.Json,
+        BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        FacturaModel BuscarFacturaXId(int idFactura);        
     }
 
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.
-    [DataContract]
-    public class FacturaModel
-    {
-        bool boolValue = true;
-        string stringValue = "Hello ";
-
-        [DataMember]
-        public bool BoolValue
-        {
-            get { return boolValue; }
-            set { boolValue = value; }
-        }
-
-        [DataMember]
-        public string StringValue
-        {
-            get { return stringValue; }
-            set { stringValue = value; }
-        }
-    }
+    
 }

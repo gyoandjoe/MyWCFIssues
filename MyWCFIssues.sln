@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetaSystems.Servicio", "NetaSystems.Servicio\NetaSystems.Servicio.csproj", "{E2AAC063-5868-485C-B55E-C39128E43CD9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWCFIssues.Repositorio", "MyWCFIssues.Repositorio\MyWCFIssues.Repositorio.csproj", "{488C2FB9-3278-4767-B3BD-17EFB22AF4DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetaSystems.Repositorio", "NetaSystems.Repositorio\NetaSystems.Repositorio.csproj", "{488C2FB9-3278-4767-B3BD-17EFB22AF4DD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWCFIssues.Servicio", "MyWCFIssues.Servicio\MyWCFIssues.Servicio.csproj", "{E2AAC063-5868-485C-B55E-C39128E43CD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWCFIssues.Web", "MyWCFIssues.Web\MyWCFIssues.Web.csproj", "{7DBD34E0-DE31-4C92-BA7B-43912A0233F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWCFIssues.Negocio", "Modelos\MyWCFIssues.Negocio.csproj", "{01B591A9-281D-494A-805C-C7841E3A9741}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +17,22 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E2AAC063-5868-485C-B55E-C39128E43CD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E2AAC063-5868-485C-B55E-C39128E43CD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E2AAC063-5868-485C-B55E-C39128E43CD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E2AAC063-5868-485C-B55E-C39128E43CD9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{488C2FB9-3278-4767-B3BD-17EFB22AF4DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{488C2FB9-3278-4767-B3BD-17EFB22AF4DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{488C2FB9-3278-4767-B3BD-17EFB22AF4DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{488C2FB9-3278-4767-B3BD-17EFB22AF4DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2AAC063-5868-485C-B55E-C39128E43CD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2AAC063-5868-485C-B55E-C39128E43CD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2AAC063-5868-485C-B55E-C39128E43CD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2AAC063-5868-485C-B55E-C39128E43CD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DBD34E0-DE31-4C92-BA7B-43912A0233F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DBD34E0-DE31-4C92-BA7B-43912A0233F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DBD34E0-DE31-4C92-BA7B-43912A0233F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DBD34E0-DE31-4C92-BA7B-43912A0233F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01B591A9-281D-494A-805C-C7841E3A9741}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01B591A9-281D-494A-805C-C7841E3A9741}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01B591A9-281D-494A-805C-C7841E3A9741}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01B591A9-281D-494A-805C-C7841E3A9741}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
