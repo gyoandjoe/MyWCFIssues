@@ -15,9 +15,7 @@ namespace MyWCFIssues.Web.Controllers
         public ActionResult Index()
         {
             
-          
-            
-            return View();
+            return RedirectToAction("Index", "Paginador");                        
         }
 
         public ActionResult About()
