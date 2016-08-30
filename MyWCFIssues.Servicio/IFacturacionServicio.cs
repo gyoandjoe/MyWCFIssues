@@ -1,4 +1,5 @@
 ﻿using Modelos;
+using NetaSystems.Repositorio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,7 +38,17 @@ namespace NetaSystems.Servicio
         RequestFormat = WebMessageFormat.Json,
         ResponseFormat = WebMessageFormat.Json,
         BodyStyle = WebMessageBodyStyle.WrappedRequest)]
-        FacturaModel BuscarFacturaXId(int idFactura);        
+        FacturaModel BuscarFacturaXId(int idFactura);
+
+
+        [OperationContract]
+        [WebGet(            
+            RequestFormat =  WebMessageFormat.Json,
+            ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.WrappedRequest,
+            UriTemplate = "ObtenerFactura2/{noPagina}/{criterioBusqueda}"
+            )]
+        IEnumerable<Factura2> ObtenerFacturas2(string noPagina, string criterioBusqueda);
     }
 
 

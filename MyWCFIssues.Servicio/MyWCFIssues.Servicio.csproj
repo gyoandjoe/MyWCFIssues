@@ -90,6 +90,10 @@
       <Project>{01b591a9-281d-494a-805c-c7841e3a9741}</Project>
       <Name>MyWCFIssues.Negocio</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MyWCFIssues.Repositorio\MyWCFIssues.Repositorio.csproj">
+      <Project>{488C2FB9-3278-4767-B3BD-17EFB22AF4DD}</Project>
+      <Name>MyWCFIssues.Repositorio</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

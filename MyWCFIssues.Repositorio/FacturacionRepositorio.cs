@@ -51,4 +51,55 @@ namespace NetaSystems.Repositorio
             }
         }
     }
+
+    public class FacturaRepositorio2
+    {
+        private readonly string conString;
+        private readonly int tamanoPaginado;
+        public FacturaRepositorio2(string connectionString, int tamanoPaginado)
+        {
+            this.conString = connectionString;
+            this.tamanoPaginado = tamanoPaginado;
+        }
+
+        public IEnumerable<Factura2> ObtenerFacturas(int noPagina, string criterioBusqueda)
+        {
+            using (SqlConnection con = new SqlConnection(this.conString))
+
+            {
+                var cmd = con.CreateCommand();
+                cmd.CommandText = "SP_ObtenerFacturas2";
+                cmd.Parameters.AddWithValue("@NoPagina", noPagina);
+                cmd.Parameters.AddWithValue("@TamanoPaginado", this.tamanoPaginado);
+                cmd.Parameters.AddWithValue("@busqueda", criterioBusqueda);
+                cmd.CommandType = CommandType.StoredProcedure;
+                con.Open();
+                var reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        yield return new Factura2
+                        {
+                            Id = reader.GetInt32(0),
+                            Nombre = reader.GetString(1),
+                            Cantidad = reader.GetDecimal(2),
+                            Fecha = reader.GetDateTime(3)
+                        };
+                    }
+                }
+
+                
+            }           
+        }
+    }
+
+    public class Factura2
+    {
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+
+        public decimal Cantidad { get; set; }
+        public DateTime Fecha { get; set; }
+    }
 }

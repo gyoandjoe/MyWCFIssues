@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NetaSystems.Repositorio;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -45,6 +46,19 @@ namespace Facturacion
                 CantidadFacturada = Convert.ToDecimal(((DataRow)ds.Tables[0].Rows[0])["CantidadFacturada"]),
                 NombrePersona = (((DataRow)ds.Tables[0].Rows[0])["NombrePersona"]).ToString()
             };           
+        }
+    }
+
+    public class Facturacion2
+    {
+        private readonly NetaSystems.Repositorio.FacturaRepositorio2 _repoFactura = new NetaSystems.Repositorio.FacturaRepositorio2(@"Server = DESKTOP-I5000\MSSQLSERVER14; Database = TestNetaSystems; User Id = sa;Password = saluditos1;", 3);
+        public IEnumerable<Factura2> ObtenerFacturas(int noPagina, string criterioBusqueda)
+        {
+            if (criterioBusqueda.ToUpper() == "TODOS")
+            {
+                return _repoFactura.ObtenerFacturas(noPagina, string.Empty);
+            }
+            return _repoFactura.ObtenerFacturas(noPagina, criterioBusqueda);
         }
     }
 }

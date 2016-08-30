@@ -6,6 +6,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using NetaSystems.Repositorio;
 
 namespace NetaSystems.Servicio
 {
@@ -15,6 +16,7 @@ namespace NetaSystems.Servicio
     {
 
         private readonly Facturacion.Facturacion _facturacion = new Facturacion.Facturacion();
+        private readonly Facturacion.Facturacion2 _facturacion2 = new Facturacion.Facturacion2();
 
         public FacturaModel BuscarFacturaXId(int idFactura)
         {
@@ -36,6 +38,11 @@ namespace NetaSystems.Servicio
             //    StringValue = "Nos defiende"
             //};
             
+        }
+
+        public IEnumerable<Factura2> ObtenerFacturas2(string noPagina, string criterioBusqueda)
+        {
+            return _facturacion2.ObtenerFacturas(Convert.ToInt32(noPagina), criterioBusqueda);
         }
     }
 }
